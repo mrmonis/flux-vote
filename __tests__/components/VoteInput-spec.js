@@ -6,7 +6,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import VoteInput from '../../src/js/components/VoteInput.react';
-// import VoteConstants from '../../src/js/constants/VoteConstants';
 
 describe("VoteInput component", () => {
 

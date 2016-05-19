@@ -20,10 +20,6 @@ class VoteInput extends React.Component {
 		super(props);
 		this._onChangeVote = this._onChangeVote.bind(this);
 
-		this.props = {
-			validVotes:[]
-		}
-
 		//Start at the beginning
 		this.state = {
 			vote:0
@@ -39,9 +35,11 @@ class VoteInput extends React.Component {
 	render() {
 		var vote = this.state.vote;
 		var options = [];
-		this.props.validVotes.forEach(function(option){
-			options.push(<option value={option} key={option}>{option}</option>);
-		});
+		if(this.props.validVotes) {
+			this.props.validVotes.forEach(function(option){
+				options.push(<option value={option} key={option}>{option}</option>);
+			});
+		}
 		return (
 			<div className="vote-list">
 				<select className="vote-input" value={vote} onChange={this._onChangeVote}>{options}</select>
